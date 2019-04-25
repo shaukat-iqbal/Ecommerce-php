@@ -35,8 +35,9 @@ class product{
 
     function createProduct($row){
        $prod=new product();
-        $prod->name=$row['Name'];
-        $prod->category=$row['Category'];
+       $prod->id=$row['id'];
+       $prod->name=$row['Name'];
+       $prod->category=$row['Category'];
         $prod->description=$row['Description'];
         $prod->imagePath=$row['ImagePath'];
         
@@ -88,7 +89,7 @@ class product{
 
     function createCard($product){
          # code...
-         $card=  '<div class="card col-3 mt-3 p-2 my-3 ml-5">';
+         $card=  '<div class="card col-3 mt-3 p-2 my-3 ml-5 view overlay zoom">';
          $card.='<div class="view overlay" style="height:300px">';
          $card.='<img class="card-img-top" src="'.$product->imagePath .'" alt="'.$product->name.'">';
          $card.=' <a><div class="mask rgba-white-slight"></div> </a></div>';
@@ -98,8 +99,7 @@ class product{
          $card.=' <h4 class="card-title">'.$product->name.'</h4> ';
          $card.=' <hr class="hr-light"> ';
          $card.=' <p class="card-text white-text mb-4">'.$product->description.'</p>';
-         $card.=' <a href="#!" class="white-text d-flex justify-content-end"><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a> </div></div>';
-         
+         $card.='<a href="//localhost/ecomSite/productDetails.php?id='.$product->id . '"class="white-text d-flex justify-content-end"><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a> </div></div>';
          return $card;
     }
 

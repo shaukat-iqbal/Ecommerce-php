@@ -18,13 +18,13 @@
     <div class="container-fluid ">
         
         <div class="row pb-4">
-            <div class="col-3">
+            <div class="col-md-3">
                 <?php
                     include("sidebar.html");
                 ?>
             </div>
      
-            <div class="col-9">
+            <div class="col-md-9">
                 <!-- here i have to include another php page -->
                 <div class="row">
                         <?php
