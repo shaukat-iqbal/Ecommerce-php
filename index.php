@@ -11,7 +11,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design Bootstrap</title>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -23,12 +22,28 @@
     <link href="css/mdb.min.css" rel="stylesheet" />
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <?php
+     $list=array();
+    include("product.php");
+   $product=new product();
+   $product->createConnection();
+   if($_SERVER["REQUEST_METHOD"] == "GET") {
+   if(isset($_GET['id'])){
+      $product->setValues($_GET['id']);
+       
+    include_once('productModal.php');
+
+   }
+    }
+    ?>
 </head>
 <body>
     <?php
     include("header.html");
     echo "<div style='height:15%'>";
     include("slider.html");
+   
     echo "</div>";
     ?>
 
@@ -46,13 +61,9 @@
                 <!-- here i have to include another php page -->
                 <div class="row">
                         <?php
-                        include("product.php");
-                        $a=new product();
-                        $a->createConnection(); 
-
-                        $list=$a->listOfProducts();
-                        foreach ($list as $product) {
-                           echo $a->createCard($product);
+                        $list=$product->listOfProducts();
+                        foreach ($list as $p) {
+                           echo $product->createCard($p);
                         }
                         ?>
                         
@@ -67,10 +78,13 @@
     
     <?php
     include("footer.html");
+   
     ?>
     
     <!-- SCRIPTS -->
     <!-- JQuery -->
+   
+   
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>

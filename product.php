@@ -21,8 +21,8 @@ class product{
            
         }
 
-    function setValues(){
-       
+    function setValues($id=null){
+       $this->id=$id;
         $qry= "select * from products where id=".$this->id.';';
         $result= $this->db->query($qry);
         $row=$result->fetch();
@@ -99,7 +99,8 @@ class product{
          $card.=' <h4 class="card-title">'.$product->name.'</h4> ';
          $card.=' <hr class="hr-light"> ';
          $card.=' <p class="card-text white-text mb-4">'.$product->description.'</p> </div>';
-         $card.='<div class="elegant-color rounded-bottom p-2"><a href="//localhost/ecomSite/productDetails.php?id='.$product->id . ' "class="white-text d-flex justify-content-end"><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a></div></div>';
+         $card.='<div class="elegant-color rounded-bottom p-2"><a href="//localhost/ecomSite?id='.$product->id . ' 
+         "class="white-text d-flex justify-content-end" role="Button" ><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a></div></div>';
          return $card;
     }
 
