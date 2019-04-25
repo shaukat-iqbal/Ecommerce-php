@@ -93,13 +93,13 @@ class product{
          $card.='<div class="view overlay" style="height:300px">';
          $card.='<img class="card-img-top" src="'.$product->imagePath .'" alt="'.$product->name.'">';
          $card.=' <a><div class="mask rgba-white-slight"></div> </a></div>';
-         $card.='  <div class="card-body elegant-color white-text rounded-bottom">';
+         $card.='  <div class="card-body elegant-color white-text ">';
         
          $card.=' <a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a> ';
          $card.=' <h4 class="card-title">'.$product->name.'</h4> ';
          $card.=' <hr class="hr-light"> ';
-         $card.=' <p class="card-text white-text mb-4">'.$product->description.'</p>';
-         $card.='<a href="//localhost/ecomSite/productDetails.php?id='.$product->id . '"class="white-text d-flex justify-content-end"><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a> </div></div>';
+         $card.=' <p class="card-text white-text mb-4">'.$product->description.'</p> </div>';
+         $card.='<div class="elegant-color rounded-bottom p-2"><a href="//localhost/ecomSite/productDetails.php?id='.$product->id . ' "class="white-text d-flex justify-content-end"><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a></div></div>';
          return $card;
     }
 

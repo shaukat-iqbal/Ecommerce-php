@@ -29,12 +29,11 @@
                         if(isset($_GET["Category"])){
                             $list=$a->findByCategory($_GET["Category"]);
                             if(isset($list[0])){
-
                                 foreach ($list as $product) {
                                     echo $a->createCard($product);
                                  }
                             }else{
-                                echo "<div class='h3'>Products Not found</div>";
+                                echo "<div class='h3 p-5 m-5 '>Products Not found</div>";
                             }
                         }
                        
