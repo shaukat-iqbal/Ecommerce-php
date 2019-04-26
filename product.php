@@ -47,7 +47,7 @@ class product{
 
     function createConnection(){
        try{
-           $this->db = new PDO('mysql:dbname=ecommerce;host=localhost','root','');
+           $this->db = new PDO('mysql:dbname=id7786936_ecomsite;host=localhost','id7786936_shaukatiqbal3001','238923Shaukat');
        } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
@@ -89,6 +89,7 @@ class product{
 
     function createCard($product){
          # code...
+         $page=$_SERVER['PHP_SELF'];
          $card=  '<div class="card col-3 mt-3 p-2 my-3 ml-5 view overlay zoom">';
          $card.='<div class="view overlay" style="height:300px">';
          $card.='<img class="card-img-top" src="'.$product->imagePath .'" alt="'.$product->name.'">';
@@ -99,8 +100,8 @@ class product{
          $card.=' <h4 class="card-title">'.$product->name.'</h4> ';
          $card.=' <hr class="hr-light"> ';
          $card.=' <p class="card-text white-text mb-4">'.$product->description.'</p> </div>';
-         $card.='<div class="elegant-color rounded-bottom p-2"><a href="//localhost/ecomSite?id='.$product->id . ' 
-         "class="white-text d-flex justify-content-end" role="Button" ><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a></div></div>';
+         $card.='<div class="elegant-color rounded-bottom p-2"><a href="'.$page.'?id='.$product->id .'"
+         class="white-text d-flex justify-content-end" role="Button" ><h5>View Product <i class="fas fa-angle-double-right"></i></h5></a></div></div>';
          return $card;
     }
 

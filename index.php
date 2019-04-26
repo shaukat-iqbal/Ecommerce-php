@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Printlo -We deliver</title>
     <meta charset="utf-8" />
+     <link rel="shortcut icon" href="img/logo.ico">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -62,9 +63,12 @@
                 <div class="row">
                         <?php
                         $list=$product->listOfProducts();
-                        foreach ($list as $p) {
-                           echo $product->createCard($p);
+                        for($i=0;$i<6;$i++){
+                           echo $product->createCard($list[$i]);
                         }
+                        //foreach ($list as $p) {
+                         //  echo $product->createCard($p);
+                        //}
                         ?>
                         
                         

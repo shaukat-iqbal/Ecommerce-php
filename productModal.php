@@ -153,14 +153,15 @@
                     </div>
                   </div>
                   <div class="text-center">
-                    <button
-                      type="button"
+                    <a
+                      role="button"
                       class="btn btn-secondary"
-                      data-dismiss="modal"
+                      
+                      href="shop.php?Category=<?=$product->category?>"
                     >
                       Close
-                    </button>
-                    <a class="btn btn-primary " href="//localhost/ecomSite/cart.php?id=<?=$product->id?>" >
+                    </a>
+                    <a class="btn btn-primary " href="cart.php?id=<?=$product->id?>" >
                       Add to cart
                       <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
                      </a>

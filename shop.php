@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Printlo- Shop</title>
+     <link rel="shortcut icon" href="img/logo.ico">
+    <?php
+     $list=array();
+    include("product.php");
+   $product=new product();
+   $product->createConnection();
+   if($_SERVER["REQUEST_METHOD"] == "GET") {
+   if(isset($_GET['id'])){
+      $product->setValues($_GET['id']);
+       
+    include_once('productModal.php');
+
+   }
+    }
+    ?>
   </head>
   <body>
     <?php
@@ -23,14 +38,12 @@
           <!-- here i have to include another php page -->
           <div class="row">
             <?php
-                        include("product.php");
-                        $a=new product();
-                        $a->createConnection(); 
+                        
                         if(isset($_GET["Category"])){
-                        $list=$a->findByCategory($_GET["Category"]);
+                        $list=$product->findByCategory($_GET["Category"]);
                          if(isset($list[0])){
                          foreach ($list as $product) { 
-                             echo $a->createCard($product); 
+                             echo $product->createCard($product); 
                         }
                         }else{ 
                             echo "<div class='h3 p-5 m-5 '>Products Not found</div>" ; } } 
@@ -42,6 +55,7 @@
 
                 <?php
                 include("footer.html");
+                
                 ?>
   </body>
 </html>
