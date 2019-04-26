@@ -47,7 +47,7 @@ class product{
 
     function createConnection(){
        try{
-           $this->db = new PDO('mysql:dbname=id7786936_ecomsite;host=localhost','id7786936_shaukatiqbal3001','238923Shaukat');
+           $this->db = new PDO('mysql:dbname=ecommerce;host=localhost','root','');
        } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
@@ -67,6 +67,16 @@ class product{
             $list[]=$this->createProduct($row);
         }
         return $list;
+    }
+
+    public function listOfCategories(){
+        $listOfCategories= array();
+        $qry='SELECT distinct Category FROM products';
+        $result= $this->db->query($qry);
+        while($row=$result->fetch()){
+            $listOfCategories[]=$row['Category'];
+        }
+        return $listOfCategories;
     }
 
      public function findByCategory( $cat = "Electonics")

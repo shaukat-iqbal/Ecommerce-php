@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Printlo -We deliver</title>
-    <meta charset="utf-8" />
-     <link rel="shortcut icon" href="img/logo.ico">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Printlo -We deliver</title>
+    <meta charset="utf-8" />
+     <link rel="shortcut icon" href="img/logo.ico">
+   
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -54,7 +55,7 @@
         <div class="row pb-4">
             <div class="col-md-3">
                 <?php
-                    include("sidebar.html");
+                    include("sidebar.php");
                 ?>
             </div>
      
