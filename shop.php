@@ -6,6 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Printlo- Shop</title>
      <link rel="shortcut icon" href="img/logo.ico">
+     
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet" />
+
     <?php
      $list=array();
     include("product.php");
@@ -23,7 +36,7 @@
   </head>
   <body>
     <?php
-    include("header.html");
+    include("header.php");
     ?>
 
     <div class="container-fluid ">
@@ -40,8 +53,8 @@
             <?php
                         
                         if(isset($_GET["Category"])){
-                        $list=$product->findByCategory($_GET["Category"]);
-                         if(isset($list[0])){
+                          $list=$product->findByCategory($_GET["Category"]);
+                          if(isset($list[0])){
                          foreach ($list as $product) { 
                              echo $product->createCard($product); 
                         }
@@ -57,5 +70,13 @@
                 include("footer.html");
                 
                 ?>
+                
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
   </body>
 </html>

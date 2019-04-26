@@ -42,7 +42,7 @@
 </head>
 <body>
     <?php
-    include("header.html");
+    include("header.php");
     echo "<div style='height:15%'>";
     include("slider.html");
    

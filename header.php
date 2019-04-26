@@ -8,18 +8,13 @@
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
    
-    
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet" />
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet" />
+    <?php
+$listo=array();
+$prod=new product();
+$prod->createConnection();
+$listo=$prod->listOfCategories();
+
+?>
   </head>
 
   <body>
@@ -90,26 +85,16 @@
               class="dropdown-menu dropdown-primary"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <a
-                class="dropdown-item"
-                href="shop.php?Category=Laptop"
-                >Laptops</a
-              >
-              <a
-                class="dropdown-item"
-                href="shop.php?Category=Camera"
-                >Cameras</a
-              >
-              <a
-                class="dropdown-item"
-                href="shop.php?Category=Mobile"
-                >Phones</a
-              >
-              <a
-                class="dropdown-item"
-                href="shop.php?Category=Accessory"
-                >Accessories</a
-              >
+              
+              
+              <?php
+      foreach ($listo as $category) {
+        echo '<a class="dropdown-item"
+        href="shop.php?Category='.$category.'"
+        >'.$category.'</a>' ;
+
+      }
+      ?>  
             </div>
           </li>
           <li class="nav-item">
