@@ -19,6 +19,7 @@
 
   <?php
   $list = array();
+  $searchResult = array();
   include_once('product.php');
   $product = new product();
   $product->createConnection();
@@ -59,7 +60,17 @@
             } else {
               echo "<div class='h3 p-5 m-5 '>Products Not found</div>";
             }
+          } elseif (isset($_GET['keyword'])) {
+            $searchResult = $product->findByName($_GET['keyword']);
+            if (isset($searchResult[0])) {
+              foreach ($searchResult as $product) {
+                echo $product->createCard($product);
+              }
+            } else {
+              echo "<div class='h3 p-5 m-5 '>Products Not found</div>";
+            }
           }
+
           ?>
         </div>
       </div>

@@ -106,6 +106,20 @@ class product
         return $list;
     }
 
+    public function findByName($name)
+    {
+        $qry = 'select * from products where Name like "%' . $name . '%";';
+        $result = $this->db->query($qry);
+        if ($result->rowCount()) {
+
+            while ($row = $result->fetch()) {
+                $list[] = $this->createProduct($row);
+            }
+        } else {
+            $list[] = null;
+        }
+        return $list;
+    }
     function createCard($product)
     {
         # code...

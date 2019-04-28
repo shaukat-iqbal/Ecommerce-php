@@ -77,7 +77,7 @@
       </ul>
       <!-- Links -->
 
-      <form class="form-inline" action="" method="POST">
+      <form class="form-inline" action="shop.php" method="GET">
         <div class="md-form my-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword" />
         </div>
